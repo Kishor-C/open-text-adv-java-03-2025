@@ -15,5 +15,10 @@ public class LaptopsStream {
 		.filter(x -> x.getPrice() >= 50000)
 		.filter(x -> x.getBrand().equals("Dell") || x.getBrand().equals("Lenovo"))
 		.forEach(x -> System.out.println(x));
+		
+		// use sequential stream on list of laptops and sort the laptops based on the price
+		// in ascending order
+		// use another sequential stream on the same list and sort the laptops based on the ram
+		// size in descending order
 	}
 }
