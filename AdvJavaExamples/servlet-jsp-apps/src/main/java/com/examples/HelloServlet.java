@@ -1,5 +1,6 @@
 package com.examples;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -16,7 +17,12 @@ public class HelloServlet extends HttpServlet {
     //GET type request is sent via URL
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter(); //creates an output writer that writes to the response body
-		out.print("<html><body><h2>This is Hello Servlet</h2></body></html>");
+		String name = "Kishor";
+		// to share the data you can use different objects like request, HttpSession
+		request.setAttribute("username", name); // username is the key & name is the value
+		// RequestDispatcher - it dispatches the request from one resource to another
+		RequestDispatcher rd = request.getRequestDispatcher("display.jsp"); // ${username}
+		rd.forward(request, response); // forwards the request & response will be from display.jsp
 	}
 
 	//POST type request is sent via form method = "post"
