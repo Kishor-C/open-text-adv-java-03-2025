@@ -6,5 +6,23 @@
 </head>
 <body>
 	<h1>This is a welcome page</h1>
+	<a href = "HelloServlet">Invoke Hello Servlet</a>
+	
+	<h2>User Registration Form</h2>
+	<form action = "RegisterServlet" method = "post">
+		<label>
+			Enter Id <input type = "number" name = "userId"> <br />
+		</label>
+		<label>
+			Enter Name <input type = "text" name = "name"> <br />
+		</label>
+		<label>
+			Enter Phone <input type = "number" name = "phone"> <br />
+		</label>
+		<label>
+			Enter Email <input type = "text" name = "email"> <br />
+		</label>
+		<input type = "submit" value = "Register">
+	</form>
 </body>
 </html>
