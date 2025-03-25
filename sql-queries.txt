@@ -1,0 +1,85 @@
+
+mysql> insert into state values('KA', 'Karnataka');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into state values('MH', 'Maharastra');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into state values('TN', 'Tamilnadu');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into city values('BLR', 'Bangalore');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into city values('MYS', 'Mysore');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into city values('CHN', 'CHN');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into city values('COM', 'Coimbatore');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into city values('MBI', 'Mumbai');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into city values('PUN', 'Pune');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> update city set city_name='Chennai' where city_id='CHN';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from state;
++----------+------------+
+| state_id | state_name |
++----------+------------+
+| KA       | Karnataka  |
+| MH       | Maharastra |
+| TN       | Tamilnadu  |
++----------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from city;
++---------+------------+
+| city_id | city_name  |
++---------+------------+
+| BLR     | Bangalore  |
+| CHN     | Chennai    |
+| COM     | Coimbatore |
+| MBI     | Mumbai     |
+| MYS     | Mysore     |
+| PUN     | Pune       |
++---------+------------+
+6 rows in set (0.00 sec)
+
+mysql> insert into state_city_ref values ('KA', 'BLR');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into state_city_ref values ('KA', 'MYS');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into state_city_ref values ('TN', 'CHN');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into state_city_ref values ('TN', 'COM');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into state_city_ref values ('MH', 'PUN');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into state_city_ref values ('MH', 'MBI');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from state_city_ref;
++-----------+----------+
+| state_ref | city_ref |
++-----------+----------+
+| KA        | BLR      |
+| KA        | MYS      |
+| TN        | CHN      |
+| TN        | COM      |
+| MH        | PUN      |
+| MH        | MBI      |
++-----------+----------+
+6 rows in set (0.00 sec)
