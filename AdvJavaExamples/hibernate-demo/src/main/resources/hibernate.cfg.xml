@@ -25,6 +25,10 @@
 
         <mapping class="com.examples.Users"/>
 
+        <mapping class="com.examples.State"/>
+
+        <mapping class="com.examples.City"/>
+
     </session-factory>
 
 </hibernate-configuration>
